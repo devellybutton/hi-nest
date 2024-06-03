@@ -13,6 +13,7 @@ export class MoviesService {
 
   getOne(id: number): Movie {
     // url은 string으로 인식되므로 number로 형변환 해줘야됨.
+    console.log('getOne Id', id, typeof id);
     const movie = this.movies.find((movie) => movie.id === id);
     if (!movie) {
       throw new NotFoundException(`Movie with ID ${id} not found.`);
